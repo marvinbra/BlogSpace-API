@@ -1,3 +1,5 @@
+const postBtn = document.getElementById("post-btn")
+
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     .then(res => res.json())
     .then(data => {
@@ -10,3 +12,10 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
             `
         }
     })
+
+postBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    const title = document.getElementById("post-title").value
+    const body = document.getElementById("post-body").value
+    console.log({title: title, body: body})
+})
